@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.3
+
+before_script:
+  - cp .env.travis .env
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan migrate --seed
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
+
+notifications:
+  email:
+    recipients:
+      - youremail@x.com
+    on_success: always
+    on_failure: always
