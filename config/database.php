@@ -63,6 +63,17 @@ return [
             ]) : [],
         ],
 
+        'testing' => [
+            'driver'   => 'pgsql',
+            'host'     => env('DB_HOST', 'localhost'),
+            'database' => env('DB_DATABASE', 'snnsyunu'),
+            'username' => env('DB_USERNAME', 'postgres'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
